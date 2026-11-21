@@ -1,0 +1,43 @@
+{
+  "name": "gestao-mercado-publico",
+  "version": "1.0.0",
+  "description": "Edição pública local de um sistema de gestão de mercado",
+  "private": true,
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "45.3.4",
+    "electron-builder": "26.18.1"
+  },
+  "build": {
+    "appId": "br.com.gestaomercado.publico",
+    "productName": "Gestao de Mercado Publico",
+    "asar": true,
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "electron/main.cjs",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "Gestao-de-Mercado-Publico-Setup-${version}.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Gestao de Mercado",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

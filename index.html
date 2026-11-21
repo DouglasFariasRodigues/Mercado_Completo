@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050709">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>Gestão de Mercado — Edição pública</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <main id="loginScreen" class="login-screen">
+    <section class="login-card">
+      <div class="eyebrow">GESTÃO DE MERCADO</div>
+      <h1>Seu mercado,<br><span>no controle.</span></h1>
+      <p id="loginDescription" class="muted">Entre para acessar o painel da sua loja.</p>
+      <form id="adminSetupForm" class="stack hidden">
+        <label>Seu nome<input name="name" autocomplete="name" placeholder="Nome do administrador" required></label>
+        <label>Usuário<input name="username" autocomplete="username" minlength="3" placeholder="Mínimo de 3 caracteres" required></label>
+        <label>Senha<input name="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" placeholder="12 a 128 caracteres" required></label>
+        <button class="button button-primary button-wide" type="submit">Criar administrador <span>→</span></button>
+      </form>
+      <form id="loginForm" class="stack hidden">
+        <label>Usuário<input name="username" autocomplete="username" placeholder="Seu usuário" required autofocus></label>
+        <label>Senha<input name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required></label>
+        <button class="button button-primary button-wide" type="submit">Entrar no sistema <span>→</span></button>
+      </form>
+      <div class="login-foot"><span class="status-dot"></span> Dados armazenados neste computador</div>
+    </section>
+    <div class="login-note">EDIÇÃO PÚBLICA <span>·</span> GESTÃO LOCAL</div>
+  </main>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Início">
+        <div><strong>GESTÃO DE MERCADO</strong><small>EDIÇÃO PÚBLICA</small></div>
+      </a>
+      <div class="store-chip"><span class="store-icon">◈</span><span>Minha loja<small>Operação local</small></span><i class="live-dot"></i></div>
+      <div class="nav-label">MENU PRINCIPAL</div>
+      <nav id="navigation" class="navigation"></nav>
+      <div class="sidebar-bottom">
+        <div class="mini-profile"><div id="avatar" class="avatar">A</div><div><strong id="sidebarName">Administrador</strong><small id="sidebarRole">Administrador</small></div></div>
+        <button id="logoutButton" class="logout-button"><span>↪</span> Sair da conta</button>
+        <div class="sidebar-version">EDIÇÃO PÚBLICA <span>·</span> v1.0</div>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <div><div id="breadcrumb" class="breadcrumb">VISÃO GERAL</div><h2 id="pageTitle">Visão geral</h2></div>
+        <div class="topbar-right"><div id="todayLabel" class="date-label"></div><div class="top-user"><div id="topAvatar" class="avatar avatar-small">A</div><div><strong id="topName">Administrador</strong><small id="topRole">Administrador</small></div></div></div>
+      </header>
+      <main id="pageContent" class="page-content"></main>
+      <footer class="footer">GESTÃO DE MERCADO <span>EDIÇÃO PÚBLICA</span></footer>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
